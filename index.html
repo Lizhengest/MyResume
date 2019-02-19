@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+   <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/index.min.css">
+
+    <!--设置前缀的插件-->
+    <script src="js/prefixfree.min.js"></script>
+
+    <!--rem-->
+    <script>
+        //根据当前设备的宽度，计算出REM的换算比例，实现等比缩放
+        ~function () {
+            let computedREM=function () {
+                //document.documentElement就是html
+                let winW=document.documentElement.clientWidth,
+                    desW=640;
+                if(winW>=640){
+                    document.documentElement.style.fontSize=100+'px';
+                    return;
+                }
+                document.documentElement.style.fontSize=winW/desW*100+'px';
+            };
+            computedREM();
+            window.addEventListener('resize',computedREM);
+        }();
+
+    </script>
+
+</head>
+<body>
+<main class="mainBox">
+    <!--外面套一层mainBox：控制当前页面最大宽度，防止把做好的页面在pc端预览时满屏展示，内容被肆意拉伸-->
+    <section class="loadingBox">
+        <div class="title">
+            <h1>我的简历</h1>
+            <h2>武汉大学测绘遥感国重实验室</h2>
+        </div>
+        <div class="progress">
+            <!--进度条是两层，上面的把下面的压上-->
+            <div class="current"></div>
+        </div>
+    </section>
+    <section class="phone">
+        <h2>
+            <img src="img/zf_phoneLogo.png" alt="">
+            <span>00:00</span>
+        </h2>
+        <div class="listenImgBox"><img src="img/zf_phoneListen.png" alt=""></div>
+        <div class="detailBox"> <a href="javascript:;" class="markLink"></a></div>
+        <!--AUDIO-->
+        <!--loop是自动循环，preload=none是不播放就不加载-->
+        <audio src="audio/bell.mp3" loop preload="none" id="ansbell"></audio>
+        <audio src="audio/say.mp3"  preload="none" id="intro"></audio>
+
+    </section>
+    <section class="message">
+        <ul class="wrapper clear">
+            <li class="stu">
+                <img src="img/zf_messageStudent.png" alt="">
+                <i class="arrow"></i>
+                面试官您好，我是来自武汉大学测绘遥感国重实验室的李筝
+            </li>
+            <li class="interview">
+                <img src="img/zf_teacher3.jpg" alt="">
+                <i class="arrow2"></i>
+                你好呀，请介绍一下自己？
+            </li>
+            <li class="stu">
+                <img src="img/zf_messageStudent.png" alt="">
+                <i class="arrow"></i>
+                好的，马上介绍！
+            </li>
+            <li class="stu">
+                <img src="img/zf_messageStudent.png" alt="">
+                <i class="arrow"></i>
+                我能熟练使用HTML、CSS、JavaScript设计布局网页，也熟悉Node的一些内置模块，url、path、fs、HTTP模块(写服务端接口)、Express框架。
+            </li>
+            <li class="stu">
+                <img src="img/zf_messageStudent.png" alt="">
+                <i class="arrow"></i>
+                我能基于ES6的类和单例模式封装一些便捷的插件，比如轮播图插件、基础版动画库、仿axios的ajax库等
+            </li>
+
+            <li class="interview">
+                <i class="arrow2"></i>
+                <img src="img/zf_teacher3.jpg" alt="" class="pic">
+                就是你啦，明天来上班！
+            </li>
+
+            <li class="keybord">
+                <span></span>
+                <a href="javascript:;"></a>
+            </li>
+
+        </ul>
+        <audio src="audio/music.mp3" preload="none" loop id="demonMusic"></audio>
+    </section>
+
+    <!--CUBE-->
+    <section class="cubeBox">
+        <ul class="cube">
+            <li><img src="img/zf_cube1.png" alt=""></li>
+            <li><img src="img/zf_cube2.png" alt=""></li>
+            <li><img src="img/zf_cube3.png" alt=""></li>
+            <li><img src="img/zf_cube4.png" alt=""></li>
+            <li><img src="img/zf_cube5.png" alt=""></li>
+            <li><img src="img/zf_cube6.png" alt=""></li>
+        </ul>
+        <img src="img/zf_cubeTip.png" alt="" class="tip">
+    </section>
+    <!--detail-->
+    <section class="detail">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide page1">
+                    <!--<img class="return" src="img/zf_return.png" alt="">-->
+                    <div class="return"></div>
+                    <dl>
+                        <dt>
+                        <h2>请联系我</h2>
+                        <p>contact me</p>
+                        </dt>
+
+                        <dd>
+                            <img src="img/zf_concatPhone.png" alt="">
+                            <div>
+                                <p>QQ:894266296</p>
+                                <p>TEL:18086111026</p>
+                            </div>
+                        </dd>
+                        <dd>
+                            <img src="img/zf_concatAddress.png" alt="">
+                            <div>
+                                <p>
+                                学校地址:<br/>
+                               武汉大学测绘遥感国重实验室</p>
+                            </div>
+                        </dd>
+                    </dl>
+                    <div class="address"><img src="img/zf_concatInfo.png" alt=""></div>
+                </div>
+                <div class="swiper-slide page2">
+                    <div class="return"></div>
+                    <p class="p1">路漫漫其修远昔<br>吾将上下而求索<span>离骚</span></p>
+                    <p class="p2">宝剑锋从磨砺出<br>梅花香自苦寒来<span>警世贤文</span></p>
+                    <h2>非淡泊无以明志</h2>
+                    <img src="img/jiezishu2.jpg" alt="1111">
+                </div>
+                <div class="swiper-slide page3">
+                    <div class="return"></div>
+                   <div class="title"></div>
+                    <div class="teacherBOX">
+                        <div class="teacher"><img src="img/zf_teacher1.jpg" alt="">
+                            <p class="name">李筝</p>
+                            <p class="intro">夫君子之行</p>
+                        </div>
+                        <div class="teacher"><img src="img/zf_teacher2.jpg"  alt="">
+                            <p class="name">李筝</p>
+                            <p class="intro">静以修身，俭以养德</p>
+                        </div>
+                        <div class="teacher"><img src="img/zf_teacher3.jpg"  alt="">
+                            <p class="name">李筝</p>
+                            <p class="intro">非淡泊无以明志，非宁静无以致远</p>
+                        </div>
+                        <div class="teacher"><img src="img/zf_teacher4.jpg"  alt="">
+                            <p class="name">李筝</p>
+                            <p class="intro">夫学须静也，才须学也</p>
+                        </div>
+                        <div class="teacher"><img src="img/zf_teacher5.jpg"  alt="">
+                            <p class="name">李筝</p>
+                            <p class="intro">非学无以广才，非志无以成学</p>
+                        </div>
+                        <div class="teacher"><img src="img/zf_teacher6.jpg"  alt="">
+                            <p class="name">李筝</p>
+                            <p class="intro">淫慢则不能励精，险躁则不能治性</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="swiper-slide page4">
+                    <div class="return"></div>
+                    <h2>学习系统</h2>
+                    <img src="img/zf_course1.png" alt="">
+                    <img src="img/zf_course2.png" alt="">
+                    <img src="img/zf_course3.png" alt="">
+                    <img src="img/zf_course4.png" alt="">
+                    <img src="img/zf_course5.png" alt="">
+                    <img src="img/zf_course6.png" alt="">
+                    <img src="img/zf_course.png" alt="">
+
+                </div>
+                <div class="swiper-slide page5">
+                    <div class="return"></div>
+                    <img src="img/psb.jpg" alt="">
+                    <img src="img/psb%20(1).jpg" alt="">
+                    <img src="img/psb%20(2).jpg" alt="">
+                    <div class="tip">
+                        <img class="tip1" src="img/zf_styleTip1.png" alt="">
+                    </div>
+
+
+                </div>
+                <div class="swiper-slide page6">
+                    <div class="return"></div>
+                    <dl>
+                        <dt>What I Learn</dt>
+                        <dd><em>&nbsp;01</em><a href="">HTML(5)+CSS(3)+移动端响应式布局开发</a></dd>
+                        <dd><em>&nbsp;02</em><a href="">JS中的闭包及堆栈内存以及THIS的处理</a></dd>
+                        <dd><em>&nbsp;03</em><a href="">JS中的面向对象编程，封装组件和插件等</a></dd>
+                        <dd><em>&nbsp;04</em><a href="">ES6中的新特性及数组对象里面的常用方法</a></dd>
+                        <dd><em>&nbsp;05</em><a href="">JS中的同步异步编程及Promise设计模式</a></dd>
+                        <dd><em>&nbsp;06</em><a href="">JS中的事件委托及事件池及发布订阅设计模式</a></dd>
+                        <dd><em>&nbsp;07</em><a href="">JS中的DOM操作以及重绘和回流的优化</a></dd>
+                        <dd><em>&nbsp;08</em><a href="">HTTP交互及AJAX库的封装以及跨域数据共享</a></dd>
+                        <dd><em>&nbsp;09</em><a href="">99</a></dd>
+                        <dd><em>&nbsp;10</em><a href="">00</a></dd>
+                        <dd><em>&nbsp;11</em><a href="">11</a></dd>
+                    </dl>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+
+<!--LOADing-->
+
+<script src="js/zepto.min.js"></script>
+<script src="js/makisu.min.js"></script>
+<script src="js/swiper.jquery.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
